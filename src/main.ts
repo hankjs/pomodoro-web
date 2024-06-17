@@ -1,7 +1,5 @@
+import { createApp } from 'vue'
 import './style.css'
-import { setupCounter } from './counter.ts'
-import { setupHearts }from'./snippets/hearts/index.ts'
+import App from './App.vue'
 
-setupHearts(document.querySelector<HTMLSpanElement>('#hearts')!)
-
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+createApp(App).mount('#app')
