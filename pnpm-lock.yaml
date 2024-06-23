@@ -4,60 +4,73 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@chromatic-com/storybook':
-    specifier: 1.5.0
-    version: 1.5.0(react@18.3.1)
-  '@storybook/addon-essentials':
-    specifier: ^8.1.10
-    version: 8.1.10(@types/react@18.3.3)(prettier@3.3.2)(react-dom@18.3.1)(react@18.3.1)
-  '@storybook/addon-interactions':
-    specifier: ^8.1.10
-    version: 8.1.10(vitest@1.6.0)
-  '@storybook/addon-links':
-    specifier: ^8.1.10
-    version: 8.1.10(react@18.3.1)
-  '@storybook/blocks':
-    specifier: ^8.1.10
-    version: 8.1.10(@types/react@18.3.3)(prettier@3.3.2)(react-dom@18.3.1)(react@18.3.1)
-  '@storybook/test':
-    specifier: ^8.1.10
-    version: 8.1.10(vitest@1.6.0)
-  '@storybook/vue3':
-    specifier: ^8.1.10
-    version: 8.1.10(prettier@3.3.2)(vue@3.4.29)
-  '@storybook/vue3-vite':
-    specifier: ^8.1.10
-    version: 8.1.10(prettier@3.3.2)(react-dom@18.3.1)(react@18.3.1)(vite@5.3.1)(vue@3.4.29)
-  '@vue/test-utils':
-    specifier: ^2.4.6
-    version: 2.4.6
-  jsdom:
-    specifier: ^24.1.0
-    version: 24.1.0
-  storybook:
-    specifier: ^8.1.10
-    version: 8.1.10(react-dom@18.3.1)(react@18.3.1)
-  typescript:
-    specifier: ^5.2.2
-    version: 5.5.2
-  vite:
-    specifier: ^5.0.8
-    version: 5.3.1
-  vitest:
-    specifier: ^1.6.0
-    version: 1.6.0(jsdom@24.1.0)
-  vue:
-    specifier: ^3.4.21
-    version: 3.4.29(typescript@5.5.2)
+importers:
 
-devDependencies:
-  '@vitejs/plugin-vue':
-    specifier: ^5.0.4
-    version: 5.0.5(vite@5.3.1)(vue@3.4.29)
-  vue-tsc:
-    specifier: ^2.0.6
-    version: 2.0.21(typescript@5.5.2)
+  .:
+    dependencies:
+      '@chromatic-com/storybook':
+        specifier: 1.5.0
+        version: 1.5.0(react@18.3.1)
+      '@storybook/addon-essentials':
+        specifier: ^8.1.10
+        version: 8.1.10(@types/react@18.3.3)(prettier@3.3.2)(react-dom@18.3.1)(react@18.3.1)
+      '@storybook/addon-interactions':
+        specifier: ^8.1.10
+        version: 8.1.10(vitest@1.6.0)
+      '@storybook/addon-links':
+        specifier: ^8.1.10
+        version: 8.1.10(react@18.3.1)
+      '@storybook/blocks':
+        specifier: ^8.1.10
+        version: 8.1.10(@types/react@18.3.3)(prettier@3.3.2)(react-dom@18.3.1)(react@18.3.1)
+      '@storybook/test':
+        specifier: ^8.1.10
+        version: 8.1.10(vitest@1.6.0)
+      '@storybook/vue3':
+        specifier: ^8.1.10
+        version: 8.1.10(prettier@3.3.2)(vue@3.4.29)
+      '@storybook/vue3-vite':
+        specifier: ^8.1.10
+        version: 8.1.10(prettier@3.3.2)(react-dom@18.3.1)(react@18.3.1)(vite@5.3.1)(vue@3.4.29)
+      '@vue/test-utils':
+        specifier: ^2.4.6
+        version: 2.4.6
+      jsdom:
+        specifier: ^24.1.0
+        version: 24.1.0
+      storybook:
+        specifier: ^8.1.10
+        version: 8.1.10(react-dom@18.3.1)(react@18.3.1)
+      typescript:
+        specifier: ^5.2.2
+        version: 5.5.2
+      vite:
+        specifier: ^5.0.8
+        version: 5.3.1
+      vitest:
+        specifier: ^1.6.0
+        version: 1.6.0(jsdom@24.1.0)
+      vue:
+        specifier: ^3.4.21
+        version: 3.4.29(typescript@5.5.2)
+    devDependencies:
+      '@pomodoro/tsconfig':
+        specifier: workspace:^
+        version: link:packages/tsconfig
+      '@vitejs/plugin-vue':
+        specifier: ^5.0.4
+        version: 5.0.5(vite@5.3.1)(vue@3.4.29)
+      vue-tsc:
+        specifier: ^2.0.6
+        version: 2.0.21(typescript@5.5.2)
+
+  packages/components:
+    devDependencies:
+      '@pomodoro/tsconfig':
+        specifier: workspace:^
+        version: link:../tsconfig
+
+  packages/tsconfig: {}
 
 packages:
 
@@ -3061,7 +3074,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.29(typescript@5.5.2)
-      vue-component-type-helpers: 2.0.21
+      vue-component-type-helpers: 2.0.22
     transitivePeerDependencies:
       - encoding
       - prettier
@@ -7621,6 +7634,10 @@ packages:
 
   /vue-component-type-helpers@2.0.21:
     resolution: {integrity: sha512-3NaicyZ7N4B6cft4bfb7dOnPbE9CjLcx+6wZWAg5zwszfO4qXRh+U52dN5r5ZZfc6iMaxKCEcoH9CmxxoFZHLg==}
+    dev: false
+
+  /vue-component-type-helpers@2.0.22:
+    resolution: {integrity: sha512-gPr2Ba7efUwy/Vfbuf735bHSVdN4ycoZUCHfypkI33M9DUH+ieRblLLVM2eImccFYaWNWwEzURx02EgoXDBmaQ==}
     dev: false
 
   /vue-docgen-api@4.78.0(vue@3.4.29):

@@ -1,0 +1,11 @@
+{
+  "extends": "@pomodoro/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    // packages 不设定映射
+    "paths": {}
+  },
+  "include": [
+    "src"
+  ]
+}

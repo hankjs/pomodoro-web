@@ -1,0 +1,13 @@
+{
+  "name": "@pomodoro/tsconfig",
+  "version": "0.0.1",
+  "main": "./tsconfig.json",
+  "module": "./tsconfig.json",
+  "types": "./tsconfig.json",
+  "exports": {
+    ".": {
+      "import": "./tsconfig.json",
+      "require": "./tsconfig.json"
+    }
+  }
+}
