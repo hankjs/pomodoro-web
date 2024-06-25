@@ -6,7 +6,7 @@
   "tailwind": {
     "config": "tailwind.config.ts",
     "css": "src/assets/index.css",
-    "baseColor": "orange",
+    "baseColor": "slate",
     "cssVariables": true
   },
   "framework": "vite",
