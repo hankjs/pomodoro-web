@@ -32,7 +32,7 @@ jobs:
       - name: Use Pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.1.2
 
       - name: Install Node.js
         uses: actions/setup-node@v4
