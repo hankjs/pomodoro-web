@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 import { nanoid } from "nanoid"
 
-class Pomodoro {
+export class Pomodoro {
   id: string;
 
   constructor() {
@@ -10,7 +10,7 @@ class Pomodoro {
   }
 }
 
-class Task {
+export class Task {
   id: string;
   pomodoros: Pomodoro[] = []
 
@@ -18,7 +18,13 @@ class Task {
     public title: string
   ) {
     this.id = nanoid()
-    this.pomodoros.push(new Pomodoro())
+    this.addPomodoros()
+  }
+
+  addPomodoros(count: number = 1) {
+    for (let i = 0; i < count; i++) {
+      this.pomodoros.push(new Pomodoro())
+    }
   }
 }
 
@@ -41,11 +47,20 @@ export const useTaskStore = defineStore("task", () => {
     return tasks.value.find((task) => task.id === id);
   }
 
+  function addPomodoros(id: string, count: number) {
+    const task = findTask(id);
+
+    if (task) {
+      task.addPomodoros(count);
+    }
+  }
+
   return {
     tasks,
 
     setupTasks,
     addTask,
-    findTask
+    findTask,
+    addPomodoros,
   };
 })
