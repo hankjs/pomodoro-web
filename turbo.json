@@ -4,6 +4,9 @@
     "build": {
       "outputs": ["dist/**"]
     },
-    "test:unit": {}
+    "test:unit": {},
+    "dev": {
+
+    }
   }
 }
