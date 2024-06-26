@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "turbo build"
+    "build": "turbo build",
+    "test:unit": "turbo test:unit"
   },
   "packageManager": "pnpm@9.1.2",
   "devDependencies": {
