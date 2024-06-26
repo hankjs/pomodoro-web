@@ -1,5 +1,5 @@
 {
-  "name": "pomodoro-web",
+  "name": "app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -22,6 +22,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.396.0",
+    "nanoid": "^5.0.7",
     "pinia": "^2.1.7",
     "radix-vue": "^1.8.5",
     "tailwind-merge": "^2.3.0",
