@@ -1,5 +1,5 @@
 {
-  "name": "@pomodoro/component",
+  "name": "@repo/component",
   "version": "0.0.1",
   "main": "./src/index.ts",
   "module": "./src/index.ts",
@@ -16,7 +16,7 @@
   },
   "scripts": {},
   "devDependencies": {
-    "@pomodoro/tsconfig": "workspace:^"
+    "@repo/tsconfig": "workspace:^"
   },
   "dependencies": {
   }
