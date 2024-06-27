@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { Task, useTaskStore } from "../task";
+import { useTaskStore } from "../task";
 import { createPinia, setActivePinia } from "pinia";
+import { Task } from "@/types/task";
 
 describe("Task Store", () => {
   beforeEach(() => {
@@ -27,8 +28,6 @@ describe("Task Store", () => {
 
       expect(store.tasks.includes(task)).toBeTruthy()
     })
-
-
 
     it("should find a task", async () => {
       const store = useTaskStore()
@@ -64,7 +63,7 @@ describe("Task Store", () => {
       expect(task.pomodoros).toHaveLength(3)
     })
 
-    it("should mark task finish a pomodoro", async () => {
+    it("should start a pomodoro", async () => {
 
     })
   })

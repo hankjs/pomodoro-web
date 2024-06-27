@@ -1,32 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { nanoid } from "nanoid"
-
-export class Pomodoro {
-  id: string;
-
-  constructor() {
-    this.id = nanoid()
-  }
-}
-
-export class Task {
-  id: string;
-  pomodoros: Pomodoro[] = []
-
-  constructor(
-    public title: string
-  ) {
-    this.id = nanoid()
-    this.addPomodoros()
-  }
-
-  addPomodoros(count: number = 1) {
-    for (let i = 0; i < count; i++) {
-      this.pomodoros.push(new Pomodoro())
-    }
-  }
-}
+import { Task } from "@/types/task";
 
 export const useTaskStore = defineStore("task", () => {
   const tasks = ref<Task[]>([]);
