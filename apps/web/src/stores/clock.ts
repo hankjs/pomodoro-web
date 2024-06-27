@@ -1,7 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-const DEFAULT_DURATION = 25 * 60 * 1000
 let timer: number | null = null
 
 export const useClockStore = defineStore("clock", () => {
@@ -11,9 +10,9 @@ export const useClockStore = defineStore("clock", () => {
   const isFinish = ref(false)
   const elapsedTime = ref(0)
 
-  function start(_duration = DEFAULT_DURATION) {
+  function start(ms: number) {
     isRunning.value = true
-    duration.value = _duration
+    duration.value = ms
 
     reset()
     updateTimer()

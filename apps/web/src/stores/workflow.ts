@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { useTaskStore } from "./task";
 import { useClockStore } from "./clock";
 import type { Task } from "@/types/task";
+const DEFAULT_DURATION = 25 * 60 * 1000
 
 export const useWorkflowStore = defineStore("workflow", () => {
   const taskStore = useTaskStore()
@@ -12,9 +13,9 @@ export const useWorkflowStore = defineStore("workflow", () => {
   const isRunning = ref(false)
   const isFinish = ref(false)
 
-  function start() {
+  function start(ms: number = DEFAULT_DURATION) {
     isRunning.value = true
-    clockStore.start()
+    clockStore.start(ms)
     currentTaks.value = taskStore.getHeadTaks() ?? null
   }
 

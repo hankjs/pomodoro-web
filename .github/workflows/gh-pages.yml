@@ -62,7 +62,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "apps/pomodoro/dist/"
+          path: "apps/web/dist/"
 
   # Deployment job
   deploy:

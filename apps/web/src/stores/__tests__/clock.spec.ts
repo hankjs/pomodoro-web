@@ -12,7 +12,7 @@ describe("Clock Store", () => {
     it("should start clock", () => {
       vi.useFakeTimers()
       const store = useClockStore()
-      store.start()
+      store.start(10000)
 
       expect(store.isRunning).toBeTruthy()
       expect(store.elapsedTime).toEqual(0)
@@ -25,7 +25,7 @@ describe("Clock Store", () => {
     it("should stop clock", () => {
       vi.useFakeTimers()
       const store = useClockStore()
-      store.start()
+      store.start(10000)
       expect(store.isRunning).toBeTruthy()
 
       store.stop()
@@ -41,7 +41,7 @@ describe("Clock Store", () => {
       vi.useFakeTimers()
 
       const store = useClockStore()
-      store.start()
+      store.start(10000)
       vi.advanceTimersByTime(1000)
       expect(store.isRunning).toBeTruthy()
       expect(store.elapsedTime).toBeGreaterThan(0)
