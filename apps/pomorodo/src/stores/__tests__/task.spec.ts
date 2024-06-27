@@ -37,6 +37,14 @@ describe("Task Store", () => {
 
       expect(store.findTask(task.id)).toEqual(task)
     })
+
+    it("should get head task", () => {
+      const store = useTaskStore()
+      const task = new Task("Task 1")
+      store.setupTasks([ task ])
+
+      expect(store.getHeadTaks()).toStrictEqual(task)
+    })
   })
 
   describe("Pomodoro", () => {
@@ -61,10 +69,6 @@ describe("Task Store", () => {
       store.addPomodoros(task.id, 2)
 
       expect(task.pomodoros).toHaveLength(3)
-    })
-
-    it("should start a pomodoro", async () => {
-
     })
   })
 })

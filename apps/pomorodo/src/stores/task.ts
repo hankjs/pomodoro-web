@@ -9,6 +9,10 @@ export const useTaskStore = defineStore("task", () => {
     tasks.value = list;
   }
 
+  function getHeadTaks(): Task | undefined {
+    return tasks.value[0];
+  }
+
   async function addTask(title: string) {
     const task = new Task(title);
 
@@ -33,6 +37,7 @@ export const useTaskStore = defineStore("task", () => {
     tasks,
 
     setupTasks,
+    getHeadTaks,
     addTask,
     findTask,
     addPomodoros,
