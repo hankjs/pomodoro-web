@@ -14,7 +14,7 @@ export const useWorkflowStore = defineStore("workflow", () => {
 
   function start() {
     isRunning.value = true
-    clockStore.startClock()
+    clockStore.start()
     currentTaks.value = taskStore.getHeadTaks() ?? null
   }
 

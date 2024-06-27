@@ -11,11 +11,11 @@ export const useClockStore = defineStore("clock", () => {
   const isFinish = ref(false)
   const elapsedTime = ref(0)
 
-  function startClock(_duration = DEFAULT_DURATION) {
+  function start(_duration = DEFAULT_DURATION) {
     isRunning.value = true
     duration.value = _duration
 
-    resetClock()
+    reset()
     updateTimer()
   }
 
@@ -31,7 +31,7 @@ export const useClockStore = defineStore("clock", () => {
     if (remainingTime > 0) {
       timer = requestAnimationFrame(updateTimer);
     } else {
-      finishClock()
+      finish()
     }
   }
 
@@ -42,18 +42,18 @@ export const useClockStore = defineStore("clock", () => {
     }
   }
 
-  function stopClock() {
+  function stop() {
     isRunning.value = false
     stopTimer()
   }
 
-  function resetClock() {
+  function reset() {
     startTime.value = Date.now()
     elapsedTime.value = 0
     isFinish.value = false
   }
 
-  function finishClock() {
+  function finish() {
     isRunning.value = false
     isFinish.value = true
   }
@@ -64,10 +64,10 @@ export const useClockStore = defineStore("clock", () => {
     elapsedTime,
     duration,
 
-    startClock,
-    stopClock,
-    resetClock,
-    finishClock,
+    start,
+    stop,
+    reset,
+    finish,
   }
 
 })
