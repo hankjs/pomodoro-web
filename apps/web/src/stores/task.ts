@@ -1,12 +1,14 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import { Task } from "@/types/task";
+import { EVENT, emitter } from "@/utils/events";
 
 export const useTaskStore = defineStore("task", () => {
   const tasks = ref<Task[]>([]);
 
   function setupTasks(list: Task[]) {
     tasks.value = list;
+    emitter.emit(EVENT.TASK_SETUP, list)
   }
 
   function getHeadTaks(): Task | undefined {
@@ -18,6 +20,7 @@ export const useTaskStore = defineStore("task", () => {
 
     tasks.value.push(task);
 
+    emitter.emit(EVENT.TASK_ADD, task)
     return task
   }
 
@@ -29,7 +32,7 @@ export const useTaskStore = defineStore("task", () => {
     const task = findTask(id);
 
     if (task) {
-      task.addPomodoros(count);
+      const pomodoro = task.addPomodoros(count);
     }
   }
 

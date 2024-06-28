@@ -1,3 +1,4 @@
+import { EVENT, emitter } from "@/utils/events";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
@@ -16,6 +17,7 @@ export const useClockStore = defineStore("clock", () => {
 
     reset()
     updateTimer()
+    emitter.emit(EVENT.CLOCK_START)
   }
 
   function updateTimer() {
@@ -55,6 +57,13 @@ export const useClockStore = defineStore("clock", () => {
   function finish() {
     isRunning.value = false
     isFinish.value = true
+    const _elapsedTime = elapsedTime.value
+    const _startTime = startTime.value
+
+    emitter.emit(EVENT.CLOCK_DONE, {
+      elapsedTime: _elapsedTime,
+      startTime: _startTime
+    })
   }
 
   return {

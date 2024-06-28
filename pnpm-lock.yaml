@@ -23,6 +23,9 @@ importers:
       lucide-vue-next:
         specifier: ^0.396.0
         version: 0.396.0(vue@3.4.30(typescript@5.4.5))
+      mitt:
+        specifier: ^3.0.1
+        version: 3.0.1
       nanoid:
         specifier: ^5.0.7
         version: 5.0.7
